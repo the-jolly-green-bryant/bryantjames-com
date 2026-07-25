@@ -776,14 +776,14 @@ html{scroll-snap-type:none}
   animation:sprig-float 7.5s ease-in-out infinite;
 }
 
-.page-home .home-contact:after{
-  content:"🐝";
+.contact-chapter .garden-bee{
   position:absolute;
   z-index:3;
   right:10%;
   top:24%;
-  font-size:1.35rem;
-  filter:drop-shadow(0 6px 8px #7e64252e);
+  width:clamp(2.8rem,4.5vw,4.75rem);
+  height:auto;
+  filter:drop-shadow(0 7px 9px #7e642535);
   pointer-events:none;
   animation:bee-meander 9s cubic-bezier(.45,.05,.55,.95) infinite;
 }
@@ -845,10 +845,10 @@ html{scroll-snap-type:none}
     font-size:1.3rem;
   }
 
-  .page-home .home-contact:after{
+  .contact-chapter .garden-bee{
     right:7%;
     top:12%;
-    font-size:1.1rem;
+    width:2.75rem;
   }
 }
 
@@ -856,7 +856,7 @@ html{scroll-snap-type:none}
   .page-home .approach:after,
   .page-home .selected-heading:after,
   .page-home .about:after,
-  .page-home .home-contact:after,
+  .contact-chapter .garden-bee,
   .page-home #site-footer .portland b{
     animation:none;
   }
