@@ -622,7 +622,8 @@ html{scroll-snap-type:none}
   z-index:2;
   margin:0 auto;
   color:#68577f;
-  font:1.35rem/1.55 var(--hand);
+  font:600 1.65rem/1.42 var(--hand);
+  letter-spacing:.012em;
   transform:rotate(-2deg);
   text-shadow:0 1px 0 #fff,0 0 12px #fff;
 }
@@ -673,8 +674,8 @@ html{scroll-snap-type:none}
   }
 
   .home-contact .note{
-    font-size:1.1rem;
-    line-height:1.45;
+    font-size:1.3rem;
+    line-height:1.4;
   }
 
   .contact-chapter .about-art .about-garden-left{
@@ -717,7 +718,7 @@ html{scroll-snap-type:none}
   }
 
   .home-contact .note{
-    font-size:.94rem;
+    font-size:1.08rem;
   }
 }
 
