@@ -502,6 +502,40 @@ html{scroll-snap-type:none}
   text-align:center;
 }
 
+.contact-chapter{
+  position:relative;
+  min-height:min(880px,100svh);
+}
+
+.contact-chapter .about-art{
+  position:absolute;
+  z-index:0;
+  left:0;
+  right:0;
+  bottom:-1px;
+  width:100%;
+  max-width:100%;
+  margin:0;
+  justify-content:space-between;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+.contact-chapter .about-art img{
+  flex:0 0 auto;
+  max-width:none;
+}
+
+.contact-chapter .about-art .about-garden-left{
+  width:min(470px,34vw);
+  margin-right:auto;
+}
+
+.contact-chapter .about-art .about-garden-right{
+  width:min(245px,18vw);
+  margin-left:auto;
+}
+
 .home-contact-copy{
   position:relative;
   z-index:2;
@@ -641,6 +675,15 @@ html{scroll-snap-type:none}
   .home-contact .note{
     font-size:1.1rem;
     line-height:1.45;
+  }
+
+  .contact-chapter .about-art .about-garden-left{
+    width:70vw;
+  }
+
+  .contact-chapter .about-art .about-garden-right{
+    width:35vw;
+    margin-left:-10vw;
   }
 }
 
