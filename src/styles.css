@@ -467,6 +467,224 @@ html{scroll-snap-type:none}
   }
 }
 
+/* A direct primary CTA and a dedicated homepage contact chapter. */
+.site-head nav .nav-contact{
+  margin-left:-.9rem;
+  padding:.62rem 1.15rem;
+  border:0;
+  border-radius:999px;
+  background:linear-gradient(100deg,#647d61,#789372);
+  color:#fff;
+  box-shadow:0 8px 22px #38473520;
+  transition:translate .2s ease,box-shadow .2s ease;
+}
+
+.site-head nav .nav-contact:hover{
+  translate:0 -2px;
+  border:0;
+  box-shadow:0 11px 28px #38473530;
+}
+
+.page-home .about{
+  padding-bottom:5rem;
+}
+
+.home-contact{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
+  isolation:isolate;
+  padding:clamp(3.5rem,7svh,5.5rem) 0 0;
+  background:
+    radial-gradient(circle at 50% 20%,#fffdf9 0,transparent 46%),
+    linear-gradient(180deg,#f3ede3,#ebe4d7);
+  text-align:center;
+}
+
+.home-contact-copy{
+  position:relative;
+  z-index:2;
+  max-width:980px;
+  padding-bottom:clamp(8rem,16vw,11rem);
+}
+
+.home-contact h2{
+  margin:.25em 0 .35em;
+  font-size:clamp(2.5rem,5vw,4.4rem);
+}
+
+.home-contact-copy>p:not(.kicker):not(.note){
+  max-width:650px;
+  margin-inline:auto;
+  font-size:1rem;
+}
+
+.home-contact-links{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:.8rem;
+  margin:2rem auto 1.5rem;
+}
+
+.home-contact-links a{
+  display:grid;
+  grid-template-columns:2.2rem minmax(0,1fr) auto;
+  align-items:center;
+  gap:.75rem;
+  min-width:0;
+  padding:1rem;
+  border:1px solid #53684f2e;
+  border-radius:16px;
+  background:#fff9;
+  box-shadow:0 10px 28px #3847350c;
+  text-align:left;
+  text-decoration:none;
+  transition:translate .25s ease,border-color .25s ease,box-shadow .25s ease,background .25s ease;
+}
+
+.home-contact-links a:hover{
+  translate:0 -4px;
+  border-color:#53684f60;
+  background:#fffdf9d9;
+  box-shadow:0 16px 38px #38473519;
+}
+
+.home-contact-links .icon{
+  display:grid;
+  width:2.2rem;
+  height:2.2rem;
+  place-items:center;
+  color:var(--moss);
+}
+
+.home-contact-links .icon svg{
+  width:1.45rem;
+  height:1.45rem;
+}
+
+.home-contact-links a>span:nth-child(2){
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.home-contact-links small{
+  display:block;
+  color:var(--moss);
+  font-size:.64rem;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.home-contact-links b{
+  font-weight:400;
+}
+
+.home-contact .note{
+  position:relative;
+  z-index:2;
+  margin:0 auto;
+  color:#68577f;
+  font:1.35rem/1.55 var(--hand);
+  transform:rotate(-2deg);
+  text-shadow:0 1px 0 #fff,0 0 12px #fff;
+}
+
+@media(max-width:760px){
+  .hero .text-link{
+    display:inline-flex;
+    align-items:center;
+    min-height:44px;
+  }
+
+  .hero .actions{
+    gap:1rem;
+  }
+
+  .page-home .about{
+    padding-bottom:4.75rem;
+  }
+
+  .home-contact{
+    padding-top:3.25rem;
+  }
+
+  .home-contact-copy{
+    width:calc(100% - 28px);
+    padding-bottom:8rem;
+  }
+
+  .home-contact h2{
+    font-size:clamp(2.15rem,10vw,3rem);
+  }
+
+  .home-contact-copy>p:not(.kicker):not(.note){
+    font-size:.94rem;
+    line-height:1.55;
+  }
+
+  .home-contact-links{
+    grid-template-columns:1fr;
+    gap:.5rem;
+    margin:1.25rem auto 1rem;
+  }
+
+  .home-contact-links a{
+    min-height:58px;
+    padding:.65rem .8rem;
+    border-radius:13px;
+  }
+
+  .home-contact .note{
+    font-size:1.1rem;
+    line-height:1.45;
+  }
+}
+
+@media(max-width:380px) and (max-height:700px){
+  .home-contact{
+    padding-top:2.4rem;
+  }
+
+  .home-contact h2{
+    margin-bottom:.25rem;
+    font-size:1.85rem;
+  }
+
+  .home-contact-copy{
+    padding-bottom:6.5rem;
+  }
+
+  .home-contact-copy>p:not(.kicker):not(.note){
+    margin-bottom:.65rem;
+    font-size:.84rem;
+  }
+
+  .home-contact-links{
+    margin:.65rem auto;
+  }
+
+  .home-contact-links a{
+    min-height:50px;
+    padding:.45rem .65rem;
+    font-size:.78rem;
+  }
+
+  .home-contact .note{
+    font-size:.94rem;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .site-head nav .nav-contact,
+  .home-contact-links a{
+    transition:none;
+  }
+}
+
 @media(max-width:430px) and (max-height:700px){
   .approach .steps article,
   .approach .steps article:nth-child(2),
