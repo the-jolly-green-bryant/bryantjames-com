@@ -1480,34 +1480,37 @@ html{scroll-snap-type:none}
   to{rotate:-.5deg}
 }
 
-.edge-filigree{
+.chapter-vignette{
   position:absolute;
   z-index:0;
-  inset:0;
-  pointer-events:none;
-  overflow:hidden;
-}
-
-.edge-filigree img{
   display:block;
-  width:100%;
-  height:100%;
-  object-fit:fill;
-  opacity:.16;
-  filter:saturate(.72) contrast(1.04);
-  animation:filigree-breathe 9s ease-in-out infinite alternate;
+  height:auto;
+  opacity:.11;
+  filter:saturate(.62) contrast(.94);
+  pointer-events:none;
 }
 
-.selected .edge-filigree img{
-  opacity:.13;
-  filter:saturate(.65) hue-rotate(8deg);
-  transform:scaleX(-1);
+.chapter-deer{
+  left:-3%;
+  bottom:-5%;
+  width:min(34vw,520px);
+  animation:vignette-graze 9s ease-in-out infinite alternate;
 }
 
-.about .edge-filigree img{
-  opacity:.15;
-  filter:saturate(.68) sepia(.08);
-  transform:scaleY(-1);
+.chapter-owl{
+  right:-2%;
+  top:1%;
+  width:min(29vw,450px);
+  opacity:.095;
+  animation:vignette-watch 10s ease-in-out infinite alternate;
+}
+
+.chapter-cat{
+  left:-2%;
+  bottom:-2%;
+  width:min(32vw,500px);
+  opacity:.105;
+  animation:vignette-doze 11s ease-in-out infinite alternate;
 }
 
 .page-home .approach>.shell,
@@ -1520,17 +1523,41 @@ html{scroll-snap-type:none}
   z-index:2;
 }
 
-@keyframes filigree-breathe{
-  from{scale:1;translate:0 0}
-  to{scale:1.012;translate:0 -.25%}
+@keyframes vignette-graze{
+  from{translate:0 0;rotate:-.2deg}
+  to{translate:5px 2px;rotate:.25deg}
+}
+
+@keyframes vignette-watch{
+  from{translate:0 0;scale:1}
+  to{translate:-4px 2px;scale:1.012}
+}
+
+@keyframes vignette-doze{
+  from{translate:0 0}
+  to{translate:3px 1px}
 }
 
 @media(max-width:760px){
-  .edge-filigree img{
-    width:100%;
-    margin-left:0;
-    opacity:.18;
-    object-fit:fill;
+  .chapter-deer{
+    left:-10%;
+    bottom:8%;
+    width:68vw;
+    opacity:.16;
+  }
+
+  .chapter-owl{
+    right:-11%;
+    top:4%;
+    width:56vw;
+    opacity:.13;
+  }
+
+  .chapter-cat{
+    left:-12%;
+    bottom:8%;
+    width:68vw;
+    opacity:.16;
   }
 }
 
@@ -1540,7 +1567,7 @@ html{scroll-snap-type:none}
   .page-home .hero-art img,
   .butterfly,
   .page-home .about-art img,
-  .edge-filigree img{
+  .chapter-vignette{
     animation:none;
   }
 
