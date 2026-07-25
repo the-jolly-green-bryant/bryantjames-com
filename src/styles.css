@@ -1923,6 +1923,10 @@ details[open] .accordion-mark:after{
     font-size:17px;
   }
 
+  .page-home .approach>.shell{
+    width:min(1020px,calc(100% - 64px));
+  }
+
   .page-home .approach h2{
     font-size:clamp(2.8rem,4vw,4rem);
   }
@@ -1937,7 +1941,8 @@ details[open] .accordion-mark:after{
     display:grid;
     grid-template-columns:repeat(2,minmax(0,1fr));
     gap:.85rem;
-    margin:2rem 0 0;
+    width:min(900px,100%);
+    margin:2rem auto 0;
     padding:0;
     overflow:visible;
   }
