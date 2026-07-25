@@ -498,6 +498,11 @@ html{scroll-snap-type:none}
 }
 
 @media(max-width:760px){
+  .contact-chapter .contact-garden img{
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#0008 9%,#000 21%);
+    mask-image:linear-gradient(to bottom,transparent 0,#0008 9%,#000 21%);
+  }
+
   .home-contact-links{
     grid-template-columns:repeat(3,minmax(0,1fr));
     gap:.45rem;
