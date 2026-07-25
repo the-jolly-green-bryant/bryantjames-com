@@ -467,6 +467,107 @@ html{scroll-snap-type:none}
   }
 }
 
+/* Full-width illustrated chapter landscapes. */
+.chapter-vignette.chapter-deer,
+.chapter-vignette.chapter-owl{
+  left:0;
+  right:0;
+  top:auto;
+  bottom:-1px;
+  width:100vw;
+  max-width:none;
+  opacity:.2;
+  filter:saturate(.76) contrast(1.02);
+  transform:none;
+  -webkit-mask-image:linear-gradient(to top,#000 0 64%,#000d 76%,transparent 100%);
+  mask-image:linear-gradient(to top,#000 0 64%,#000d 76%,transparent 100%);
+}
+
+.chapter-vignette.chapter-deer img,
+.chapter-vignette.chapter-owl img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.chapter-vignette.chapter-deer{
+  animation:vignette-graze 12s ease-in-out infinite alternate;
+}
+
+.chapter-vignette.chapter-owl{
+  animation:vignette-watch 13s ease-in-out infinite alternate;
+}
+
+.contact-chapter{
+  background:linear-gradient(180deg,#f3ede3 0,#ebe4d7 62%,#26362f 100%);
+}
+
+.contact-chapter .contact-garden{
+  position:absolute;
+  z-index:0;
+  left:0;
+  right:0;
+  bottom:-1px;
+  display:block;
+  width:100%;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+.contact-chapter .contact-garden img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.contact-chapter:after{
+  content:"";
+  position:absolute;
+  z-index:1;
+  right:0;
+  bottom:-1px;
+  left:0;
+  height:clamp(2.25rem,5vw,4.5rem);
+  background:linear-gradient(180deg,transparent,#26362f 92%);
+  pointer-events:none;
+}
+
+.contact-chapter .home-contact-copy,
+.contact-chapter .section-cue,
+.contact-chapter .garden-bee{
+  z-index:2;
+}
+
+@media(max-width:760px){
+  .chapter-vignette.chapter-deer,
+  .chapter-vignette.chapter-owl{
+    left:0;
+    right:0;
+    bottom:-1px;
+    width:100vw;
+    opacity:.22;
+  }
+
+  .chapter-vignette.chapter-deer{
+    opacity:.29;
+  }
+
+  .contact-chapter .contact-garden{
+    width:100vw;
+  }
+
+  .contact-chapter .contact-garden img{
+    width:100%;
+  }
+
+  .contact-chapter .home-contact .note,
+  .contact-chapter .note{
+    color:#fff9ed;
+    font-size:1.28rem;
+    text-shadow:0 1px 2px #17221d,0 0 14px #17221dcf;
+  }
+}
+
 /* A direct primary CTA and a dedicated homepage contact chapter. */
 .site-head nav .nav-contact{
   margin-left:-.9rem;
