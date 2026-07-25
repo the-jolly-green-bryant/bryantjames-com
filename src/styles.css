@@ -1506,10 +1506,11 @@ html{scroll-snap-type:none}
 }
 
 .chapter-cat{
-  left:-2%;
-  bottom:-2%;
-  width:min(32vw,500px);
-  opacity:.105;
+  left:50%;
+  bottom:-4%;
+  width:min(46vw,680px);
+  opacity:.17;
+  transform:translateX(-50%);
   animation:vignette-doze 11s ease-in-out infinite alternate;
 }
 
@@ -1554,10 +1555,21 @@ html{scroll-snap-type:none}
   }
 
   .chapter-cat{
-    left:-12%;
-    bottom:8%;
-    width:68vw;
-    opacity:.16;
+    left:50%;
+    bottom:7%;
+    width:88vw;
+    opacity:.21;
+    transform:translateX(-50%);
+  }
+}
+
+@media(max-width:760px){
+  .project-slider{
+    padding-bottom:1rem;
+  }
+
+  .project-slider .project-card{
+    box-shadow:0 7px 14px #27332614;
   }
 }
 
