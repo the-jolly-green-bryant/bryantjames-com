@@ -1,31 +1,88 @@
-# Dual-identity static portfolio
+# Bryant James — Portfolio
 
-One source builds two isolated, static sites:
+<p align="center">
+  One dependency-free build system. Two distinct identities. Two production sites.
+</p>
 
-- `dist/bri/` → `bri.bryantjames.com`
-- `dist/bryant/` → `bryantjames.com`
+<p align="center">
+  <a href="https://github.com/the-jolly-green-bryant/bryantjames-com/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/the-jolly-green-bryant/bryantjames-com/actions/workflows/ci.yml/badge.svg"></a>
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-ESM-F7DF1E?logo=javascript&logoColor=111">
+  <img alt="Dependencies" src="https://img.shields.io/badge/runtime_dependencies-0-success">
+</p>
 
-## Commands
+This repository powers two isolated static portfolios from one maintainable source:
 
-```sh
-npm run build
+| Build | Production site | Focus |
+|---|---|---|
+| `dist/bryant/` | [bryantjames.com](https://bryantjames.com) | Professional portfolio |
+| `dist/bri/` | [bri.bryantjames.com](https://bri.bryantjames.com) | Creative portfolio |
+
+The output is plain HTML, CSS, and a small accessible interaction script. There is
+no client framework, runtime package dependency, or server process to operate.
+
+## Engineering goals
+
+- Keep each identity visually and semantically independent.
+- Deliver fast, cache-friendly static output.
+- Preserve keyboard and assistive-technology support for interactive controls.
+- Generate metadata and JSON-LD alongside the page content.
+- Deploy to AWS without long-lived cloud credentials.
+
+## Local development
+
+Requires a current Node.js release.
+
+```bash
+git clone https://github.com/the-jolly-green-bryant/bryantjames-com.git
+cd bryantjames-com
 npm run check
-npm run preview -- bri
-npm run preview -- bryant
+npm run build
 ```
 
-The output is static HTML and CSS with a small, dependency-free script for accessible slider controls. JSON-LD structured data is included for search engines.
+Preview either generated site:
 
-## AWS deployment
+```bash
+npm run preview -- bryant
+npm run preview -- bri
+```
 
-Every push to `main` validates both builds and deploys `dist/bryant/` and `dist/bri/` to their separate production S3 websites. The `Deploy production` workflow can also be run manually. It uses short-lived GitHub OIDC credentials and does not store AWS access keys in GitHub.
+## How the build works
 
-Configure the GitHub repository with:
+```text
+site data + shared assets
+          │
+          ▼
+  scripts/build.mjs
+     ┌────┴────┐
+     ▼         ▼
+dist/bryant  dist/bri
+```
 
-- Secret `AWS_DEPLOY_ROLE_ARN`: IAM role trusted by this repository’s GitHub OIDC subject.
-- Variable `AWS_REGION`: bucket region.
-- Variables `BRYANT_S3_BUCKET` and `BRI_S3_BUCKET`: separate production bucket names.
+`scripts/build.mjs` produces both sites deterministically. `scripts/check.mjs`
+validates the source and output assumptions, while `scripts/serve.mjs` provides a
+small local static server for review.
 
-Restrict the OIDC role trust to this repository’s protected production environment. Grant it `s3:ListBucket` and `s3:GetBucketLocation` on the production buckets, plus `s3:PutObject` and `s3:DeleteObject` on those buckets’ objects.
+## Deployment
 
-Only public portfolio content belongs in this repository. Local deployment backups, environment files, private keys, and AWS configuration are ignored.
+Every push to `main` validates both builds and deploys each output directory to its
+own S3 website. The production workflow uses GitHub's OpenID Connect integration to
+assume a narrowly scoped AWS role—no persistent AWS access keys are stored in GitHub.
+
+Repository configuration:
+
+| Type | Name | Purpose |
+|---|---|---|
+| Secret | `AWS_DEPLOY_ROLE_ARN` | OIDC-trusted IAM role |
+| Variable | `AWS_REGION` | S3 bucket region |
+| Variable | `BRYANT_S3_BUCKET` | Professional-site bucket |
+| Variable | `BRI_S3_BUCKET` | Creative-site bucket |
+
+The role needs bucket listing/location access and object write/delete access only
+for the two deployment buckets. Its trust policy should be restricted to this
+repository's protected production environment.
+
+## Security
+
+Only public portfolio content belongs in this repository. Deployment backups,
+environment files, private keys, and local AWS configuration are ignored. See
+[SECURITY.md](SECURITY.md) for vulnerability reporting.
