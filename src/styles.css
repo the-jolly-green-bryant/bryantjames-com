@@ -1509,12 +1509,14 @@ html{scroll-snap-type:none}
   animation:vignette-watch 10s ease-in-out infinite alternate;
 }
 
-.chapter-still-life{
+.chapter-columbia{
   left:50%;
-  bottom:-4%;
-  width:min(52vw,760px);
-  opacity:.17;
+  bottom:-1px;
+  width:100vw;
+  opacity:.15;
   transform:translateX(-50%);
+  -webkit-mask-image:linear-gradient(to top,#000 0 58%,#000c 72%,transparent 100%);
+  mask-image:linear-gradient(to top,#000 0 58%,#000c 72%,transparent 100%);
   animation:vignette-doze 11s ease-in-out infinite alternate;
 }
 
@@ -1558,11 +1560,12 @@ html{scroll-snap-type:none}
     opacity:.13;
   }
 
-  .chapter-still-life{
+  .chapter-columbia{
     left:50%;
-    bottom:8%;
-    width:92vw;
-    opacity:.19;
+    bottom:-1px;
+    width:165vw;
+    max-width:none;
+    opacity:.18;
     transform:translateX(-50%);
   }
 }
@@ -1643,10 +1646,10 @@ html{scroll-snap-type:none}
     opacity:.14;
   }
 
-  .chapter-still-life{
-    bottom:-7%;
-    width:min(62vw,900px);
-    opacity:.18;
+  .chapter-columbia{
+    bottom:-1px;
+    width:100vw;
+    opacity:.16;
   }
 
   .page-home .selected{
