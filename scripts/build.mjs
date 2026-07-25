@@ -5,6 +5,7 @@ import path from 'node:path';
 const root = path.resolve(import.meta.dirname, '..');
 const dist = path.join(root, 'dist');
 const styleSource = await readFile(path.join(root, 'src/styles.css'));
+const buildDate = new Date().toISOString().slice(0, 10);
 const assetNames = ['hero-door.webp', 'hero-door-mobile.png', 'bibleproject-chapter.webp', 'eso-chapter.webp', 'healthmedocs-chapter.webp', 'contact-vignette.webp', 'icons.svg',
   'clean/understand.png', 'clean/creative.png', 'clean/team.png', 'clean/constraints.png', 'clean/results.png', 'clean/growth.png',
   'screens/bibleproject-mobile.webp', 'screens/eso-dreugh-wax-graph.webp', 'screens/healthme-mobile.webp',
@@ -63,7 +64,7 @@ for (const [key, identity] of Object.entries(identities)) {
   await writePage(out, 'contact', contact(identity));
   const routes = ['', 'work/', ...Object.keys(projects).map(slug => `work/${slug}/`), 'contact/'];
   await writeFile(path.join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: https://${identity.host}/sitemap.xml\n`);
-  await writeFile(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(route => `\n  <url><loc>https://${identity.host}/${route}</loc></url>`).join('')}\n</urlset>\n`);
+  await writeFile(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(route => `\n  <url><loc>https://${identity.host}/${route}</loc><lastmod>${buildDate}</lastmod></url>`).join('')}\n</urlset>\n`);
 }
 
 async function writePage(out, route, content) {
@@ -76,7 +77,7 @@ function layout(identity, page, title, description, content) {
   const route = page === 'home' ? '' : page === 'work' ? 'work/' : page === 'contact' ? 'contact/' : `work/${page}/`;
   const canonical = `https://${identity.host}/${route}`;
   const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': [
-    { '@type': 'Person', '@id': `https://${identity.host}/#person`, name: identity.name, url: `https://${identity.host}/`, jobTitle: 'Portland Website Developer and Software Engineer', knowsAbout: ['Website development', 'Software engineering', 'Technical strategy'], address: { '@type': 'PostalAddress', addressLocality: 'Portland', addressRegion: 'OR', addressCountry: 'US' } },
+    { '@type': 'Person', '@id': `https://${identity.host}/#person`, name: identity.name, url: `https://${identity.host}/`, email: identity.email, sameAs: [`https://github.com/${identity.github}`, `https://linkedin.com/in/${identity.linkedin}`], jobTitle: 'Portland Website Developer and Software Engineer', knowsAbout: ['Website development', 'Software engineering', 'Technical strategy'], address: { '@type': 'PostalAddress', addressLocality: 'Portland', addressRegion: 'OR', addressCountry: 'US' } },
     { '@type': 'WebSite', '@id': `https://${identity.host}/#website`, name: identity.name, url: `https://${identity.host}/` },
     { '@type': 'ProfessionalService', '@id': `https://${identity.host}/#business`, name: `${identity.name} Website Development`, url: `https://${identity.host}/`, description: 'Website development, software engineering, and technical strategy for Portland businesses.', serviceType: ['Website development', 'Custom software development', 'Technical strategy'], areaServed: { '@type': 'City', name: 'Portland', containedInPlace: { '@type': 'State', name: 'Oregon' } }, founder: { '@id': `https://${identity.host}/#person` } }
   ]});
