@@ -467,6 +467,70 @@ html{scroll-snap-type:none}
   }
 }
 
+/* Contact landscape: quiet Gorge depth behind a richer garden foreground. */
+@media(min-width:761px){
+  .contact-chapter .contact-garden:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:url("/assets/clean/contact-garden-desktop.jpg") center bottom/100% 100% no-repeat;
+    opacity:.24;
+    filter:saturate(.5) contrast(.92);
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000b 22%,#000 100%);
+    mask-image:linear-gradient(to bottom,transparent 0,#000b 22%,#000 100%);
+  }
+
+  .contact-chapter .contact-garden img{
+    position:relative;
+    z-index:1;
+    -webkit-mask-image:linear-gradient(to top,#000 0 28%,#000d 36%,transparent 57%);
+    mask-image:linear-gradient(to top,#000 0 28%,#000d 36%,transparent 57%);
+  }
+}
+
+.portland .footer-note{
+  margin:0 0 1.15rem;
+  color:#f7efe3;
+  font:600 clamp(1.15rem,1.5vw,1.45rem)/1.4 var(--hand);
+  letter-spacing:.01em;
+  text-align:right;
+  transform:rotate(-1.5deg);
+}
+
+@media(max-width:760px){
+  .home-contact-links a{
+    grid-template-columns:2.2rem minmax(0,1fr) auto;
+    min-height:58px;
+    padding:.7rem .85rem;
+    border-color:#fff;
+    background:#fffdf9;
+    box-shadow:0 10px 24px #26362f22;
+  }
+
+  .home-contact-links a>span:nth-child(2){
+    overflow:visible;
+  }
+
+  .home-contact-links small{
+    margin:0;
+    color:var(--ink);
+    font-size:.76rem;
+    letter-spacing:.12em;
+  }
+
+  .home-contact-links .contact-detail{
+    display:none;
+  }
+
+  footer .portland .footer-note{
+    width:100%;
+    margin:0 auto 1.5rem;
+    font-size:1.35rem;
+    line-height:1.4;
+    text-align:center;
+  }
+}
+
 /* Full-width illustrated chapter landscapes. */
 .chapter-vignette.chapter-deer,
 .chapter-vignette.chapter-owl{
@@ -2276,5 +2340,41 @@ details[open] .accordion-mark:after{
   .page-home [data-accordion] details::details-content,
   .page-home [data-accordion] summary img{
     transition:none;
+  }
+}
+
+@media(max-width:760px){
+  .home-contact-links a{
+    grid-template-columns:2.2rem minmax(0,1fr) auto;
+    min-height:58px;
+    padding:.7rem .85rem;
+    border-color:#fff;
+    background:#fffdf9;
+    box-shadow:0 10px 24px #26362f22;
+  }
+
+  .home-contact-links a>span:nth-child(2){
+    overflow:visible;
+  }
+
+  .home-contact-links small{
+    margin:0;
+    color:var(--ink);
+    font-size:.76rem;
+    letter-spacing:.12em;
+  }
+
+  .home-contact-links .contact-detail{
+    display:none;
+  }
+
+  footer .portland .footer-note{
+    width:100%;
+    margin:0 auto 1.5rem;
+    color:#f7efe3;
+    font:600 1.35rem/1.4 var(--hand);
+    letter-spacing:.01em;
+    text-align:center;
+    transform:rotate(-1.5deg);
   }
 }
