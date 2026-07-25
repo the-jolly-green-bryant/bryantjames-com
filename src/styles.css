@@ -2426,3 +2426,25 @@ details[open] .accordion-mark:after{
     transform:rotate(-1.5deg);
   }
 }
+
+.portland .footer-note>span{
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+}
+
+.portland .footer-note .footer-heart{
+  width:2.15rem;
+  height:2.15rem;
+  flex:0 0 auto;
+  object-fit:contain;
+  filter:drop-shadow(0 2px 5px #17221d66);
+  animation:heart-breathe 3.8s ease-in-out infinite;
+}
+
+@media(max-width:760px){
+  footer .portland .footer-note .footer-heart{
+    width:2.45rem;
+    height:2.45rem;
+  }
+}

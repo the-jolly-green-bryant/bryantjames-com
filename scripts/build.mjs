@@ -12,6 +12,7 @@ const assetNames = ['hero-door.webp', 'hero-door-mobile.png', 'bibleproject-chap
   'clean/about-teacup.png', 'clean/about-lantern.png', 'clean/about-flower.png', 'clean/about-garden-left.png', 'clean/about-garden-right.png',
   'clean/brand-botanical-hd.png', 'clean/brand-botanical-crisp.png', 'clean/portland-footer-hd.png', 'clean/portland-line-crisp.png', 'clean/about-garden-left-hd.png', 'clean/about-garden-right-hd.png',
   'clean/garden-bee.png', 'clean/floating-butterfly.png', 'clean/floating-sprig.png', 'clean/floating-firefly.png',
+  'clean/footer-heart.png',
   'clean/chapter-deer.png', 'clean/chapter-owl.png', 'clean/chapter-columbia.png',
   'clean/chapter-glen-desktop.jpg', 'clean/chapter-glen-mobile.jpg', 'clean/chapter-watchtower-desktop.jpg', 'clean/chapter-watchtower-mobile.jpg',
   'clean/contact-garden-desktop.jpg', 'clean/contact-garden-mobile.jpg',
@@ -95,7 +96,7 @@ function header(identity, page) {
 }
 
 function footer(identity) {
-  return `<footer id="site-footer"><div><a class="brand light" href="/"><span>${identity.name}</span><img src="/assets/clean/brand-botanical-crisp.png" width="1254" height="1254" alt="" aria-hidden="true"></a><p>Software engineer blending creativity,<br> strategy, and code to build software<br> that makes a difference.</p></div><div><small>Navigate</small><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/#about">About</a><a href="/#contact">Contact</a></div><div><small>Let’s connect</small><a href="https://github.com/${identity.github}">GitHub</a><a href="https://linkedin.com/in/${identity.linkedin}">LinkedIn</a><a href="mailto:${identity.email}">Email</a></div><div class="portland"><p class="footer-note">It’s not just about the code.<br>It’s about the outcome. ♡</p><img src="/assets/clean/portland-line-crisp.png" width="1771" height="888" loading="lazy" alt="Crisp line drawing of the Portland skyline, bridge, forest, and Mount Hood"><span>Made with care in Portland, Oregon <b aria-hidden="true">♡</b></span></div></footer>`;
+  return `<footer id="site-footer"><div><a class="brand light" href="/"><span>${identity.name}</span><img src="/assets/clean/brand-botanical-crisp.png" width="1254" height="1254" alt="" aria-hidden="true"></a><p>Software engineer blending creativity,<br> strategy, and code to build software<br> that makes a difference.</p></div><div><small>Navigate</small><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/#about">About</a><a href="/#contact">Contact</a></div><div><small>Let’s connect</small><a href="https://github.com/${identity.github}">GitHub</a><a href="https://linkedin.com/in/${identity.linkedin}">LinkedIn</a><a href="mailto:${identity.email}">Email</a></div><div class="portland"><p class="footer-note">It’s not just about the code.<br><span>It’s about the outcome.<img class="footer-heart" src="/assets/clean/footer-heart.png" width="256" height="256" loading="lazy" alt="" aria-hidden="true"></span></p><img src="/assets/clean/portland-line-crisp.png" width="1771" height="888" loading="lazy" alt="Crisp line drawing of the Portland skyline, bridge, forest, and Mount Hood"><span>Made with care in Portland, Oregon</span></div></footer>`;
 }
 
 function icon(name) {
