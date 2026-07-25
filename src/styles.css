@@ -1505,10 +1505,10 @@ html{scroll-snap-type:none}
   animation:vignette-watch 10s ease-in-out infinite alternate;
 }
 
-.chapter-cat{
+.chapter-still-life{
   left:50%;
   bottom:-4%;
-  width:min(46vw,680px);
+  width:min(52vw,760px);
   opacity:.17;
   transform:translateX(-50%);
   animation:vignette-doze 11s ease-in-out infinite alternate;
@@ -1554,11 +1554,11 @@ html{scroll-snap-type:none}
     opacity:.13;
   }
 
-  .chapter-cat{
+  .chapter-still-life{
     left:50%;
-    bottom:7%;
-    width:88vw;
-    opacity:.21;
+    bottom:8%;
+    width:92vw;
+    opacity:.19;
     transform:translateX(-50%);
   }
 }
@@ -1570,6 +1570,79 @@ html{scroll-snap-type:none}
 
   .project-slider .project-card{
     box-shadow:0 7px 14px #27332614;
+  }
+}
+
+@media(min-width:1025px){
+  .page-home .hero.shell{
+    width:100%;
+    max-width:none;
+    margin:0;
+    padding:0 0 3rem max(21px,calc((100vw - 1180px)/2));
+    grid-template-columns:minmax(470px,.78fr) minmax(0,1.32fr);
+  }
+
+  .page-home .hero>.site-head{
+    width:min(1180px,calc(100vw - 42px));
+  }
+
+  .page-home .hero-art{
+    height:100%;
+    margin-right:0;
+    border-radius:42% 0 0 48%;
+    mask-image:linear-gradient(90deg,transparent,#000 8%);
+  }
+
+  .page-home .hero-art picture img{
+    object-position:72% center;
+    transform:scale(1.08);
+    transform-origin:70% center;
+  }
+
+  .page-home .hero-art:after{
+    background:linear-gradient(90deg,var(--paper),transparent 12%);
+  }
+
+  .page-home .approach>.shell{
+    width:min(1280px,calc(100% - 64px));
+  }
+
+  .page-home .approach .steps{
+    gap:.8rem;
+    margin-top:2rem;
+  }
+
+  .page-home .approach .steps article{
+    min-height:210px;
+    padding:1.15rem 1rem;
+    border:1px solid #53684f24;
+    border-radius:18px 18px 34px 18px;
+    background:#fffaf3b8;
+    box-shadow:0 12px 30px #34402f0b;
+  }
+
+  .page-home .approach .steps article:nth-child(even){
+    border-radius:18px 18px 18px 34px;
+  }
+
+  .chapter-deer{
+    left:-2%;
+    bottom:-8%;
+    width:min(47vw,720px);
+    opacity:.17;
+  }
+
+  .chapter-owl{
+    right:-2%;
+    top:2%;
+    width:min(39vw,600px);
+    opacity:.14;
+  }
+
+  .chapter-still-life{
+    bottom:-7%;
+    width:min(62vw,900px);
+    opacity:.18;
   }
 }
 
