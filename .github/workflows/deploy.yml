@@ -29,7 +29,9 @@ jobs:
           aws-region: ${{ vars.AWS_REGION }}
       - name: Deploy immutable assets
         run: |
+          aws s3 sync dist/bri/ s3://${{ vars.BRI_S3_BUCKET }}/ --exclude "*" --include "assets/*" --include "styles.*.css" --delete --cache-control "public,max-age=31536000,immutable"
           aws s3 sync dist/bryant/ s3://${{ vars.BRYANT_S3_BUCKET }}/ --exclude "*" --include "assets/*" --include "styles.*.css" --delete --cache-control "public,max-age=31536000,immutable"
       - name: Deploy documents
         run: |
+          aws s3 sync dist/bri/ s3://${{ vars.BRI_S3_BUCKET }}/ --exclude "assets/*" --exclude "styles.*.css" --delete --cache-control "public,max-age=300,must-revalidate"
           aws s3 sync dist/bryant/ s3://${{ vars.BRYANT_S3_BUCKET }}/ --exclude "assets/*" --exclude "styles.*.css" --delete --cache-control "public,max-age=300,must-revalidate"

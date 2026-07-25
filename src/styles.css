@@ -744,3 +744,276 @@ html{scroll-snap-type:none}
   .rail-controls{margin-top:-.35rem}
   .selected .rail-controls{margin-top:-.35rem}
 }
+
+/* Keep every desktop chapter to one viewport and scale the work rail accordingly. */
+@media(min-width:1025px){
+  .page-home main>section,
+  .page-home #site-footer{
+    height:100svh;
+    min-height:0;
+    max-height:100svh;
+    overflow:hidden;
+  }
+
+  .page-home .selected{
+    padding:clamp(2.4rem,5.5svh,3.8rem) 0 clamp(4rem,7.5svh,5rem);
+  }
+
+  .selected-heading h2{
+    margin:.2em 0 .45em;
+    font-size:clamp(2.25rem,4.5svh,3.35rem);
+  }
+
+  .project-slider{
+    gap:1.1rem;
+    padding-top:.55rem;
+    padding-bottom:1rem;
+  }
+
+  .project-slider .project-card{
+    grid-template-columns:minmax(0,1.4fr) minmax(250px,.6fr);
+    flex-basis:min(820px,58vw);
+    height:clamp(330px,50svh,440px);
+  }
+
+  .project-slider .card-copy{
+    padding:clamp(1.5rem,3svh,2.25rem) clamp(1.4rem,2.2vw,2rem);
+  }
+
+  .project-slider .card-copy h3{
+    font-size:clamp(1.65rem,2.5svh,1.95rem);
+  }
+
+  .project-slider .card-copy>p{
+    font-size:.82rem;
+    line-height:1.5;
+  }
+
+  .project-slider .story{
+    margin-top:.55rem;
+  }
+
+  .selected .rail-controls{
+    margin-top:-.75rem;
+    margin-bottom:.15rem;
+  }
+
+  .selected>.more{
+    margin-top:.45rem;
+  }
+
+  .page-home .about-art{
+    justify-content:space-between;
+  }
+
+  .page-home .about-art .about-garden-left{
+    width:min(470px,34vw);
+    margin-right:auto;
+  }
+
+  .page-home .about-art .about-garden-right{
+    width:min(245px,18vw);
+    margin-left:auto;
+  }
+}
+
+/* Whimsical motion with a crisp, modern interaction layer. */
+.page-home .hero-copy{
+  animation:hero-copy-in .8s cubic-bezier(.22,1,.36,1) both;
+}
+
+.page-home .hero-art{
+  animation:hero-art-in 1s .08s cubic-bezier(.22,1,.36,1) both;
+}
+
+.page-home .hero-art img{
+  animation:hero-drift 12s 1.1s ease-in-out infinite alternate;
+}
+
+.butterfly{
+  animation:butterfly-drift 4.8s ease-in-out infinite;
+  filter:drop-shadow(0 5px 7px #53684f2b);
+}
+
+.section-cue{
+  transition:translate .25s ease,border-color .25s ease,box-shadow .25s ease;
+}
+
+.section-cue:hover{
+  translate:0 -3px;
+  border-color:#52654e80;
+  box-shadow:0 11px 28px #26322524,0 0 0 5px #fff7;
+}
+
+.selected{
+  isolation:isolate;
+}
+
+.selected:before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:8% 8% 12%;
+  background:
+    radial-gradient(circle at 24% 42%,#d9c9f02d,transparent 34%),
+    radial-gradient(circle at 72% 58%,#c9ddbd33,transparent 38%);
+  filter:blur(42px);
+  pointer-events:none;
+}
+
+.project-card{
+  transition:translate .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .35s ease;
+}
+
+.project-card .scene-image{
+  transition:scale .7s cubic-bezier(.22,1,.36,1),filter .5s ease;
+}
+
+.project-card .logo-ghost{
+  transition:scale .55s cubic-bezier(.22,1,.36,1),filter .55s ease;
+}
+
+.project-card:hover img{
+  transform:none;
+}
+
+.button{
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 10px 26px #38473524;
+  transition:translate .25s ease,box-shadow .25s ease;
+}
+
+.button:before{
+  content:"";
+  position:absolute;
+  inset:-50%;
+  background:linear-gradient(105deg,transparent 38%,#fff5 50%,transparent 62%);
+  translate:-70% 0;
+  transition:translate .65s ease;
+}
+
+.button:hover{
+  translate:0 -2px;
+  box-shadow:0 14px 34px #38473535;
+}
+
+.button:hover:before{
+  translate:70% 0;
+}
+
+.text-link,.selected>.more,.project-card .story{
+  transition:color .2s ease,border-color .2s ease,letter-spacing .25s ease;
+}
+
+.text-link:hover,.selected>.more:hover,.project-card .story:hover{
+  color:var(--lavender);
+  border-color:currentColor;
+  letter-spacing:.015em;
+}
+
+.rail-controls button:not(:disabled){
+  border-radius:999px;
+  transition:opacity .2s ease,translate .2s ease,background .2s ease,box-shadow .2s ease;
+}
+
+.rail-controls button:not(:disabled):hover{
+  translate:0 -2px;
+  transform:none;
+  background:#fff9;
+  box-shadow:0 6px 18px #3847351c;
+}
+
+.about-art img{
+  transform-origin:50% 100%;
+}
+
+@media(hover:hover) and (pointer:fine){
+  .project-card:hover{
+    translate:0 -7px;
+    border-color:#53684f4a;
+    box-shadow:0 25px 70px #2733262b;
+  }
+
+  .project-card:hover .scene-image{
+    scale:1.035;
+    filter:contrast(1.06) saturate(1.08);
+  }
+
+  .project-card:hover .logo-ghost{
+    scale:1.055;
+    filter:drop-shadow(0 0 20px #fff);
+  }
+
+  .approach .steps article img,
+  .about .values img{
+    transition:translate .35s cubic-bezier(.22,1,.36,1),rotate .35s ease,filter .35s ease;
+  }
+
+  .approach .steps article:hover img,
+  .about .values article:hover img{
+    translate:0 -5px;
+    rotate:-2deg;
+    filter:contrast(1.38) saturate(1.22) brightness(.94) drop-shadow(0 8px 10px #3847351f);
+  }
+
+  .page-home .about-art .about-garden-left{
+    animation:garden-sway-left 7s ease-in-out infinite alternate;
+  }
+
+  .page-home .about-art .about-garden-right{
+    animation:garden-sway-right 8s .7s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes hero-copy-in{
+  from{opacity:0;translate:0 22px}
+  to{opacity:1;translate:0 0}
+}
+
+@keyframes hero-art-in{
+  from{opacity:0;clip-path:inset(0 0 0 18% round 45% 0 0 52%)}
+  to{opacity:1;clip-path:inset(0)}
+}
+
+@keyframes hero-drift{
+  from{scale:1.01;translate:-.4% 0}
+  to{scale:1.045;translate:.4% -.5%}
+}
+
+@keyframes butterfly-drift{
+  0%,100%{translate:0 0;rotate:0deg}
+  45%{translate:10px -13px;rotate:8deg}
+  70%{translate:-3px -7px;rotate:-5deg}
+}
+
+@keyframes garden-sway-left{
+  from{rotate:-.35deg}
+  to{rotate:.45deg}
+}
+
+@keyframes garden-sway-right{
+  from{rotate:.4deg}
+  to{rotate:-.5deg}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .page-home .hero-copy,
+  .page-home .hero-art,
+  .page-home .hero-art img,
+  .butterfly,
+  .page-home .about-art img{
+    animation:none;
+  }
+
+  .project-card,
+  .project-card .scene-image,
+  .project-card .logo-ghost,
+  .approach .steps article img,
+  .about .values img,
+  .section-cue,
+  .button,
+  .button:before{
+    transition:none;
+  }
+}
