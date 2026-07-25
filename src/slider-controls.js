@@ -22,3 +22,31 @@ for (const controls of document.querySelectorAll('[data-controls-for]')) {
   addEventListener('resize', update, { passive: true });
   update();
 }
+
+const mobileAccordion = matchMedia('(max-width: 760px)');
+
+for (const accordion of document.querySelectorAll('[data-accordion]')) {
+  const items = [...accordion.querySelectorAll(':scope > details')];
+
+  const configure = () => {
+    if (!mobileAccordion.matches) {
+      for (const item of items) item.open = true;
+      return;
+    }
+
+    const openItem = items.find(item => item.open) || items[0];
+    for (const item of items) item.open = item === openItem;
+  };
+
+  for (const item of items) {
+    item.addEventListener('toggle', () => {
+      if (!mobileAccordion.matches || !item.open) return;
+      for (const sibling of items) {
+        if (sibling !== item) sibling.open = false;
+      }
+    });
+  }
+
+  mobileAccordion.addEventListener('change', configure);
+  configure();
+}
