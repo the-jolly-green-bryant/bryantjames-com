@@ -498,28 +498,52 @@ html{scroll-snap-type:none}
 }
 
 @media(max-width:760px){
+  .home-contact-links{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:.45rem;
+  }
+
   .home-contact-links a{
-    grid-template-columns:2.2rem minmax(0,1fr) auto;
-    min-height:58px;
-    padding:.7rem .85rem;
+    position:relative;
+    display:flex;
+    min-width:0;
+    min-height:86px;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:.3rem;
+    padding:.65rem .35rem;
     border-color:#fff;
     background:#fffdf9;
     box-shadow:0 10px 24px #26362f22;
+    text-align:center;
   }
 
   .home-contact-links a>span:nth-child(2){
     overflow:visible;
   }
 
+  .home-contact-links .icon{
+    width:1.75rem;
+    height:1.75rem;
+  }
+
   .home-contact-links small{
     margin:0;
     color:var(--ink);
-    font-size:.76rem;
-    letter-spacing:.12em;
+    font-size:.67rem;
+    letter-spacing:.08em;
   }
 
   .home-contact-links .contact-detail{
     display:none;
+  }
+
+  .home-contact-links b{
+    position:absolute;
+    top:.45rem;
+    right:.55rem;
+    font-size:.82rem;
   }
 
   footer .portland .footer-note{
@@ -2344,28 +2368,52 @@ details[open] .accordion-mark:after{
 }
 
 @media(max-width:760px){
+  .home-contact-links{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:.45rem;
+  }
+
   .home-contact-links a{
-    grid-template-columns:2.2rem minmax(0,1fr) auto;
-    min-height:58px;
-    padding:.7rem .85rem;
+    position:relative;
+    display:flex;
+    min-width:0;
+    min-height:86px;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:.3rem;
+    padding:.65rem .35rem;
     border-color:#fff;
     background:#fffdf9;
     box-shadow:0 10px 24px #26362f22;
+    text-align:center;
   }
 
   .home-contact-links a>span:nth-child(2){
     overflow:visible;
   }
 
+  .home-contact-links .icon{
+    width:1.75rem;
+    height:1.75rem;
+  }
+
   .home-contact-links small{
     margin:0;
     color:var(--ink);
-    font-size:.76rem;
-    letter-spacing:.12em;
+    font-size:.67rem;
+    letter-spacing:.08em;
   }
 
   .home-contact-links .contact-detail{
     display:none;
+  }
+
+  .home-contact-links b{
+    position:absolute;
+    top:.45rem;
+    right:.55rem;
+    font-size:.82rem;
   }
 
   footer .portland .footer-note{
