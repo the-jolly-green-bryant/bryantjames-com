@@ -113,7 +113,7 @@ function railControls(id, label) {
 }
 
 function edgeFiligree() {
-  return `<span class="edge-filigree" aria-hidden="true"><i>${icon("flourish")}</i><i>${icon("flourish")}</i><i>${icon("flourish")}</i><i>${icon("flourish")}</i></span>`;
+  return `<span class="edge-filigree" aria-hidden="true"><img src="/assets/clean/botanical-filigree.png" width="1536" height="1024" loading="lazy" alt=""></span>`;
 }
 
 function processStep(image, title, copy) {

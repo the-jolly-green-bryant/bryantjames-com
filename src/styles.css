@@ -1395,40 +1395,31 @@ html{scroll-snap-type:none}
 .edge-filigree{
   position:absolute;
   z-index:0;
-  inset:clamp(.8rem,2.6vw,2.2rem);
+  inset:0;
   pointer-events:none;
+  overflow:hidden;
 }
 
-.edge-filigree i{
-  position:absolute;
-  display:block;
-  width:clamp(3.75rem,6.5vw,6.75rem);
-  aspect-ratio:1;
-  color:var(--moss);
-  opacity:.13;
-  filter:drop-shadow(0 4px 8px #38473512);
-  animation:filigree-breathe 8s ease-in-out infinite alternate;
-}
-
-.edge-filigree svg{
+.edge-filigree img{
   display:block;
   width:100%;
   height:100%;
+  object-fit:fill;
+  opacity:.16;
+  filter:saturate(.72) contrast(1.04);
+  animation:filigree-breathe 9s ease-in-out infinite alternate;
 }
 
-.edge-filigree i:nth-child(1){top:0;left:0;rotate:-24deg}
-.edge-filigree i:nth-child(2){top:0;right:0;rotate:68deg;scale:.82;animation-delay:-2s}
-.edge-filigree i:nth-child(3){bottom:0;left:0;rotate:-104deg;scale:.72;animation-delay:-5s}
-.edge-filigree i:nth-child(4){right:0;bottom:0;rotate:154deg;scale:.94;animation-delay:-3.5s}
-
-.selected .edge-filigree i{
-  color:var(--lavender);
-  opacity:.11;
+.selected .edge-filigree img{
+  opacity:.13;
+  filter:saturate(.65) hue-rotate(8deg);
+  transform:scaleX(-1);
 }
 
-.about .edge-filigree i{
-  color:#718166;
-  opacity:.12;
+.about .edge-filigree img{
+  opacity:.15;
+  filter:saturate(.68) sepia(.08);
+  transform:scaleY(-1);
 }
 
 .page-home .approach>.shell,
@@ -1442,22 +1433,16 @@ html{scroll-snap-type:none}
 }
 
 @keyframes filigree-breathe{
-  from{opacity:.08;filter:drop-shadow(0 3px 7px #3847350d)}
-  to{opacity:.16;filter:drop-shadow(0 5px 11px #3847351a)}
+  from{scale:1;translate:0 0}
+  to{scale:1.012;translate:0 -.25%}
 }
 
 @media(max-width:760px){
-  .edge-filigree{
-    inset:.55rem;
-  }
-
-  .edge-filigree i{
-    width:3.25rem;
-    opacity:.09;
-  }
-
-  .edge-filigree i:nth-child(3){
-    display:none;
+  .edge-filigree img{
+    width:100%;
+    margin-left:0;
+    opacity:.18;
+    object-fit:fill;
   }
 }
 
@@ -1467,7 +1452,7 @@ html{scroll-snap-type:none}
   .page-home .hero-art img,
   .butterfly,
   .page-home .about-art img,
-  .edge-filigree i{
+  .edge-filigree img{
     animation:none;
   }
 
