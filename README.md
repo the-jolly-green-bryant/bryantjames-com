@@ -18,15 +18,14 @@ The output is static HTML and CSS with a small, dependency-free script for acces
 
 ## AWS deployment
 
-Production deployment is manual through the `Build and deploy portfolios` GitHub Actions workflow. It uses GitHub OIDC and does not store AWS access keys in the repository.
+Every push to `main` validates both builds and deploys `dist/bryant/` to the production `bryantjames.com` S3 website. The `Deploy production` workflow can also be run manually. It uses short-lived GitHub OIDC credentials and does not store AWS access keys in GitHub.
 
 Configure the GitHub repository with:
 
 - Secret `AWS_DEPLOY_ROLE_ARN`: IAM role trusted by this repository’s GitHub OIDC subject.
 - Variable `AWS_REGION`: bucket region.
-- Variables `BRI_S3_BUCKET` and `BRYANT_S3_BUCKET`: distinct bucket names.
-- Optional variables `BRI_CLOUDFRONT_DISTRIBUTION_ID` and `BRYANT_CLOUDFRONT_DISTRIBUTION_ID`.
+- Variable `BRYANT_S3_BUCKET`: production bucket name.
 
-Grant the role `s3:ListBucket`, `s3:GetBucketLocation`, `s3:PutObject`, and `s3:DeleteObject` only on the two deployment buckets. If invalidation is enabled, also grant `cloudfront:CreateInvalidation` for the two distributions.
+Restrict the OIDC role trust to this repository’s `main` branch. Grant it `s3:ListBucket` and `s3:GetBucketLocation` on the production bucket, plus `s3:PutObject` and `s3:DeleteObject` on that bucket’s objects.
 
 Only public portfolio content belongs in this repository. Local deployment backups, environment files, private keys, and AWS configuration are ignored.
