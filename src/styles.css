@@ -1968,6 +1968,27 @@ details[open] .accordion-mark:after{
 }
 
 @media(max-width:760px){
+  .page-home .approach{
+    text-align:left;
+  }
+
+  .page-home .approach .kicker{
+    justify-content:flex-start;
+    text-align:left;
+  }
+
+  .page-home .approach h2{
+    max-width:22rem;
+    margin:.35rem 0 1rem;
+    text-align:left;
+  }
+
+  .page-home .approach .lede{
+    max-width:31rem;
+    margin-inline:0;
+    text-align:left;
+  }
+
   .page-home .approach .steps,
   .page-home .about .values{
     display:block;
@@ -1994,7 +2015,7 @@ details[open] .accordion-mark:after{
 
   .page-home .approach .steps summary{
     display:grid;
-    grid-template-columns:2rem 46px minmax(0,1fr) 1.5rem;
+    grid-template-columns:52px minmax(0,1fr) 1.5rem;
     align-items:center;
     gap:.55rem;
     min-height:54px;
@@ -2002,19 +2023,19 @@ details[open] .accordion-mark:after{
   }
 
   .page-home .approach .step-number{
-    color:var(--moss);
-    font-size:.67rem;
-    font-weight:700;
-    letter-spacing:.1em;
+    display:none;
   }
 
   .page-home .approach .steps summary img{
     position:static;
-    width:44px;
-    height:44px;
+    width:50px;
+    height:50px;
     margin:0;
     transform:none;
+    opacity:1;
+    filter:contrast(1.52) saturate(1.28) brightness(.88);
     object-fit:contain;
+    transition:scale .28s ease,rotate .28s ease,filter .28s ease;
   }
 
   .page-home .approach .steps h3{
@@ -2024,10 +2045,16 @@ details[open] .accordion-mark:after{
   }
 
   .page-home .approach .steps details>p{
-    margin:0 1.5rem .8rem 5.1rem;
+    margin:0 1.5rem .8rem 3.9rem;
     color:#303832;
     font-size:.88rem;
     line-height:1.5;
+  }
+
+  .page-home .approach .steps details[open] summary img{
+    scale:1.08;
+    rotate:-3deg;
+    filter:contrast(1.62) saturate(1.34) brightness(.86);
   }
 
   .page-home .about .kicker{
@@ -2065,7 +2092,10 @@ details[open] .accordion-mark:after{
     height:52px;
     margin:0;
     transform:none;
+    opacity:1;
+    filter:contrast(1.58) saturate(1.3) brightness(.86);
     object-fit:contain;
+    transition:scale .28s ease,rotate .28s ease,filter .28s ease;
   }
 
   .page-home .about .values h3{
@@ -2078,6 +2108,37 @@ details[open] .accordion-mark:after{
     color:#303832;
     font-size:.9rem;
     line-height:1.5;
+  }
+
+  .page-home .about .values details[open] summary img{
+    scale:1.08;
+    rotate:3deg;
+    filter:contrast(1.68) saturate(1.36) brightness(.84);
+  }
+
+  .page-home [data-accordion] details::details-content{
+    block-size:0;
+    overflow:hidden;
+    opacity:0;
+    translate:0 -5px;
+    transition:
+      block-size .32s cubic-bezier(.22,1,.36,1),
+      content-visibility .32s,
+      opacity .22s ease,
+      translate .32s cubic-bezier(.22,1,.36,1);
+    transition-behavior:allow-discrete;
+  }
+
+  .page-home [data-accordion] details[open]::details-content{
+    block-size:auto;
+    opacity:1;
+    translate:0 0;
+  }
+}
+
+@supports(interpolate-size:allow-keywords){
+  :root{
+    interpolate-size:allow-keywords;
   }
 }
 
@@ -2100,7 +2161,9 @@ details[open] .accordion-mark:after{
   .button,
   .button:before,
   .accordion-mark:before,
-  .accordion-mark:after{
+  .accordion-mark:after,
+  .page-home [data-accordion] details::details-content,
+  .page-home [data-accordion] summary img{
     transition:none;
   }
 }
