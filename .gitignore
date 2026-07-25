@@ -1,4 +1,11 @@
 dist/
 docs/screenshots/
+.deploy-backups/
+.env
+.env.*
+!.env.example
+.aws/
+*.key
+*.pem
 .idea/
 .DS_Store

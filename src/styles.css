@@ -45,3 +45,702 @@ footer:before{content:"";position:absolute;left:0;right:0;top:-18px;height:20px;
   .about-garden-left{left:-18vw;width:92vw}
   .about-garden-right{right:-15vw;width:64vw}
 }
+
+/* A composed narrow-screen layout for phones and compact browser panes. */
+@media(max-width:760px){
+  .site-head{height:88px;padding-inline:.45rem}
+  .site-head .brand{font-size:2.15rem;gap:.4rem}
+  .site-head .brand>img{width:3.9rem;height:4.15rem;margin-block:-.65rem;filter:drop-shadow(0 5px 10px #4b59451c)}
+
+  .hero{min-height:720px;padding:1.75rem 1rem 0}
+  .hero h1{margin:.3em 0 .55em}
+  .hero-copy>p:not(.eyebrow){line-height:1.65}
+  .hero-art{height:390px;left:.45rem;right:.45rem;border-radius:18px 18px 0 0}
+
+  .approach{padding:4.25rem 0 4.5rem}
+  .approach .lede{max-width:31rem;margin-bottom:2.4rem}
+  .approach .steps{gap:.8rem;align-items:stretch}
+  .approach .steps article,
+  .approach .steps article:nth-child(2){display:flex;flex-direction:column;align-items:center;padding:1.25rem .9rem;border:1px solid var(--line);border-radius:14px;background:#fff8}
+  .approach .steps article:nth-child(n+3){padding-top:1.25rem}
+  .approach .steps article img{height:62px;margin-bottom:.45rem}
+  .approach .steps h3{margin:.45rem 0 .35rem}
+  .approach .steps p{margin-bottom:0}
+
+  .selected{padding:4.25rem 0}
+  .project-slider{gap:1rem;padding-inline:20px;scroll-padding-inline:20px}
+  .project-slider .project-card{flex-basis:calc(100vw - 56px);min-height:0}
+  .project-slider .card-media{height:325px}
+  .project-slider .card-copy{padding:1.5rem 1.35rem 1.7rem}
+
+  .about{padding-top:4.5rem;padding-bottom:12.5rem}
+  .about .values{gap:.35rem}
+  .about .values article{border:0;border-radius:12px;background:#fff7;padding:.8rem .9rem}
+  .about .values article:first-child{border-top:0}
+  .about-garden-left{left:-10vw;width:82vw}
+  .about-garden-right{right:-8vw;width:52vw}
+}
+
+@media(max-width:430px){
+  .site-head .brand>img{width:3.45rem;height:3.7rem}
+  .approach .steps{grid-template-columns:1fr}
+  .project-slider .card-media{height:300px}
+}
+
+@media(max-width:760px){
+  footer{grid-template-columns:1fr 1fr;column-gap:2.5rem;row-gap:1.75rem;padding:3rem 28px 2.25rem;background:linear-gradient(145deg,#344431,#3c4d38)}
+  footer>div:first-child{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:1.6rem;padding-bottom:1.6rem;border-bottom:1px solid #f5f0e824}
+  footer>div:first-child .brand{margin:0;font-size:2.35rem}
+  footer>div:first-child .brand>img{width:2.7rem;height:2.9rem}
+  footer>div:first-child p{margin:0;max-width:18rem;line-height:1.65;color:#f5f0e8d9}
+  footer small{margin-bottom:.65rem;color:#f5f0e8b8}
+  footer a{padding:.12rem 0}
+  footer .portland{grid-column:1/-1;align-items:center;text-align:center;padding-top:1.5rem;margin-top:.25rem;border-top:1px solid #f5f0e824}
+  footer .portland img{width:min(300px,78vw);opacity:.92;filter:brightness(1.22)}
+  footer .portland span{margin-top:.35rem;font-size:.92rem;color:#f5f0e8d9}
+}
+
+@media(max-width:430px){
+  footer{column-gap:1.5rem;padding-inline:22px}
+  footer>div:first-child{grid-template-columns:1fr;gap:.7rem}
+  footer>div:first-child p br{display:none}
+}
+
+/* Crisp imagery, an explicitly discoverable project rail, and a real about closing. */
+.hero-art img,.scene-image,.case-hero img,.contact>img{filter:contrast(1.035) saturate(1.02)}
+.screen-ghost,.night .screen-ghost{opacity:1;backdrop-filter:none}
+
+.project-slider{scroll-snap-type:x mandatory;scroll-padding-inline:max(5vw,calc((100vw - 1180px)/2))}
+.project-slider .project-card{flex-basis:min(940px,68vw);scroll-snap-align:start;scroll-snap-stop:always}
+.selected>.more{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;border-bottom:1px solid var(--moss);padding-bottom:.25rem}
+.selected>.more span{margin-left:0}
+.selected>.more b{font-weight:500;line-height:1}
+
+.about{padding:5rem 0 0;min-height:0}
+.about .about-grid{display:block;max-width:760px}
+.about .about-grid>div{max-width:none}
+.about .kicker{justify-content:center}
+.about h2,.about .about-grid>div>p{text-align:center}
+.about .note{display:block;margin:0;text-align:center;color:var(--lavender);font:1.28rem/1.65 var(--hand);transform:rotate(-2deg)}
+.about-closing{position:relative;margin-top:3rem}
+.about-art{display:flex;align-items:flex-end;justify-content:center;overflow:hidden;margin-top:.4rem}
+.about-art>span{display:none}
+.about-art img{position:relative;display:block;height:auto;filter:contrast(1.035) saturate(1.025)}
+.about-art .about-garden-left{left:auto;width:min(560px,58vw);clip-path:polygon(43% 0,100% 0,100% 100%,0 100%,0 49%,43% 49%)}
+.about-art .about-garden-right{right:auto;width:min(270px,28vw);margin-left:-2vw}
+
+@media(max-width:760px){
+  .project-slider{scroll-padding-inline:20px}
+  .project-slider .project-card{flex-basis:69vw}
+  .project-slider .card-media{height:270px}
+  .selected>.more{margin-top:1.7rem}
+
+  .about{padding:4.5rem 0 0}
+  .about .values{margin-bottom:0}
+  .about-closing{margin-top:2.5rem}
+  .about .note{font-size:1.18rem}
+  .about-art{margin-top:.2rem}
+  .about-art .about-garden-left{left:auto;width:78vw}
+  .about-art .about-garden-right{right:auto;width:42vw;margin-left:-14vw}
+}
+
+@media(max-width:430px){
+  .project-slider .project-card{flex-basis:70vw}
+  .project-slider .card-media{height:250px}
+  .about-art .about-garden-left{width:84vw}
+  .about-art .about-garden-right{width:46vw;margin-left:-17vw}
+}
+
+/* Let the illustrated worlds carry more of the composition. */
+.project-card .screen-ghost,
+.project-slider .night .screen-ghost,
+.project-slider .alpine .screen-ghost,
+.project-slider .greenhouse .screen-ghost,
+.work-list .night .screen-ghost,
+.work-list .alpine .screen-ghost,
+.work-list .greenhouse .screen-ghost{top:54%;width:min(43%,440px);padding:7px;border-radius:14px;background:#f8f7f2dc;box-shadow:0 16px 45px #17221c4d,0 0 28px #fff7;opacity:.9}
+.project-card .screen-ghost img,
+.project-slider .night .screen-ghost img,
+.project-slider .alpine .screen-ghost img,
+.project-slider .greenhouse .screen-ghost img{border-radius:8px;opacity:1}
+.approach .steps article img{height:92px}
+.about .values img{width:72px;height:82px}
+.portland img{width:min(340px,100%)}
+
+@media(max-width:760px){
+  .hero{min-height:770px}
+  .hero-art{left:calc(50% - 50vw);right:calc(50% - 50vw);height:445px;border-radius:0}
+  .hero-art img{object-position:47% center;transform:scale(1.055);transform-origin:center bottom}
+  .hero-art:after{background:linear-gradient(180deg,var(--paper),transparent 25%)}
+  .project-slider .card-media{height:315px}
+  .project-card .screen-ghost,
+  .project-slider .night .screen-ghost,
+  .project-slider .alpine .screen-ghost,
+  .project-slider .greenhouse .screen-ghost{top:55%;width:58%;padding:6px;border-radius:12px}
+  .approach .steps article img{height:78px}
+  footer .portland img{width:min(340px,82vw)}
+}
+
+@media(max-width:430px){
+  .hero-art{height:425px}
+  .project-slider .card-media{height:285px}
+  .project-card .screen-ghost,
+  .project-slider .night .screen-ghost,
+  .project-slider .alpine .screen-ghost,
+  .project-slider .greenhouse .screen-ghost{width:62%}
+}
+
+/* Viewport chapters with a quiet cue to continue. */
+html{scroll-snap-type:none}
+.page-home{height:100svh;overflow-y:auto;overscroll-behavior-y:contain;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.page-home main>section,.page-home #site-footer{position:relative;min-height:100svh;scroll-snap-align:start;scroll-snap-stop:always}
+.page-home .hero{min-height:calc(100svh - 92px)}
+.page-home #site-footer{align-content:center}
+.section-cue{position:absolute;z-index:8;left:50%;bottom:1.15rem;width:2.65rem;height:2.65rem;display:grid;place-items:center;transform:translateX(-50%);border:1px solid #52654e45;border-radius:999px;background:#f8f4ede8;color:var(--moss-dark);text-decoration:none;box-shadow:0 7px 22px #26322518;backdrop-filter:blur(7px)}
+.section-cue span{display:block;font-size:1.05rem;line-height:1;animation:cue-bob 1.8s ease-in-out infinite}
+.approach,.selected,.about{padding-bottom:max(5rem,calc(1.15rem + 3rem))}
+.about .section-cue{bottom:1.35rem;background:#f8f4edeb}
+@keyframes cue-bob{0%,100%{transform:translateY(-2px)}50%{transform:translateY(3px)}}
+
+@media(max-width:760px){
+  .page-home .hero{min-height:calc(100svh - 88px)}
+  .section-cue{bottom:1rem;width:2.5rem;height:2.5rem}
+  .hero .section-cue{bottom:1.25rem}
+  .selected{padding-bottom:5.75rem}
+  .about{padding-bottom:4.75rem}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .page-home{scroll-snap-type:none;scroll-behavior:auto}
+  .section-cue span{animation:none}
+}
+
+/* Project identities appear as soft light within their illustrated worlds. */
+.project-card .scene-image{object-position:center}
+.logo-ghost{position:absolute;z-index:3;left:50%;top:30%;width:min(42%,430px);transform:translate(-50%,-50%);isolation:isolate;pointer-events:none}
+.logo-ghost:before{content:"";position:absolute;z-index:-1;inset:-75% -35%;background:radial-gradient(ellipse,#fffbd4aa 0,#fff8c94f 32%,transparent 70%);filter:blur(13px);opacity:.82}
+.logo-ghost img{width:100%;height:auto;border:0;filter:contrast(1.12) drop-shadow(0 0 8px #fff9);opacity:.86}
+.project-card.night .logo-ghost{top:31%;width:min(39%,390px);mix-blend-mode:screen}
+.project-card.alpine .logo-ghost{left:55%;top:25%;width:min(31%,310px);mix-blend-mode:multiply}
+.project-card.greenhouse .logo-ghost{left:36%;top:23%;width:min(34%,340px);mix-blend-mode:multiply}
+.project-card.alpine .logo-ghost:before,.project-card.greenhouse .logo-ghost:before{background:radial-gradient(ellipse,#fffef0e8 0,#fffef078 36%,transparent 72%)}
+.project-card .card-media:after{background:linear-gradient(0deg,#f9f5ed 0,transparent 22%),linear-gradient(90deg,#26362f12,transparent 24%,transparent 76%,#26362f12)}
+
+@media(max-width:760px){
+  .project-slider .card-media{height:355px}
+  .project-slider .logo-ghost{width:62%;top:29%}
+  .project-slider .night .logo-ghost{width:58%;top:30%}
+  .project-slider .alpine .logo-ghost{left:56%;width:48%;top:24%}
+  .project-slider .greenhouse .logo-ghost{left:38%;width:51%;top:22%}
+}
+
+@media(max-width:430px){
+  .project-slider .card-media{height:330px}
+}
+
+/* Mobile clarity: stronger artwork, a looser process rhythm, and restrained motion. */
+.hero-art picture{display:block;width:100%;height:100%}
+.approach .steps{counter-reset:process-step}
+.approach .steps article{counter-increment:process-step;position:relative}
+.approach .steps article img,.about .values img{opacity:1;filter:contrast(1.32) saturate(1.14) brightness(.9)}
+.icon svg{filter:contrast(1.3);stroke-width:1.8}
+
+@media(max-width:760px){
+  body{font-size:16px;line-height:1.62}
+  .hero{min-height:calc(100svh - 88px);padding-top:1.4rem}
+  .hero-copy>p:not(.eyebrow){font-size:1rem;line-height:1.65;max-width:31rem}
+  .hero-art{height:min(52svh,560px)}
+  .hero-art img{width:100%;height:100%;object-fit:cover;object-position:center 54%;transform:none;filter:contrast(1.06) saturate(1.04)}
+  .approach .lede{font-size:1rem;line-height:1.68}
+  .approach .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem}
+  .approach .steps article,
+  .approach .steps article:nth-child(2),
+  .approach .steps article:nth-child(n+3){align-items:flex-start;text-align:left;min-height:224px;padding:1.1rem 1rem 1.2rem;border:1px solid #53684f2b;border-radius:18px 18px 34px 18px;background:linear-gradient(145deg,#fffdf9e8,#eee7d9c9);box-shadow:0 10px 24px #32402f0a}
+  .approach .steps article:nth-child(even){border-radius:18px 18px 18px 34px;background:linear-gradient(215deg,#fffdf9e8,#eee7d9c9)}
+  .approach .steps article:before{content:"0" counter(process-step);position:absolute;right:.85rem;top:.72rem;color:var(--moss);font:700 .68rem/1 var(--sans);letter-spacing:.12em;opacity:.75}
+  .approach .steps article img{width:auto;height:76px;margin:0 0 .55rem;object-fit:contain}
+  .approach .steps h3{font-size:1rem;line-height:1.2;margin:.2rem 0 .4rem}
+  .approach .steps p{font-size:.86rem;line-height:1.5;color:#303832}
+  .project-slider .card-copy>p,.about .values p{font-size:.9rem;line-height:1.55}
+}
+
+@media(max-width:430px){
+  .approach .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+  .approach .steps article,
+  .approach .steps article:nth-child(2),
+  .approach .steps article:nth-child(n+3){min-height:215px;padding:.95rem .82rem 1rem}
+  .approach .steps article img{height:66px}
+  .approach .steps p{font-size:.8rem}
+}
+
+@supports (animation-timeline:view()){
+  .approach .steps article,.project-card,.about .values article{animation:soft-reveal linear both;animation-timeline:view();animation-range:entry 4% cover 26%}
+}
+@keyframes soft-reveal{from{opacity:.35;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){
+  .approach .steps article,.project-card,.about .values article{animation:none}
+}
+
+/* The about values read as one calm mobile list, not three desktop cards. */
+@media(max-width:760px){
+  .about .about-grid{width:calc(100% - 36px)}
+  .about .kicker{justify-content:flex-start}
+  .about h2,.about .about-grid>div>p{text-align:left}
+  .about h2{max-width:21rem;margin:0 0 1.25rem;font-size:clamp(2.15rem,10vw,3rem);line-height:1.02}
+  .about .about-grid>div>p{font-size:1rem;line-height:1.7;color:#303832}
+  .about .values{display:block;margin-top:1.75rem;border-top:1px solid #53684f38}
+  .about .values article,
+  .about .values article:first-child{display:grid;grid-template-columns:76px minmax(0,1fr);align-items:center;gap:1rem;min-height:108px;margin:0;padding:1rem 0;border:0;border-bottom:1px solid #53684f38;border-radius:0;background:transparent;box-shadow:none}
+  .about .values img{width:72px;height:78px;margin:0;object-fit:contain}
+  .about .values p{margin:0;padding:0;font-size:.94rem;line-height:1.5;color:#303832}
+  .about .values b{display:block;margin-bottom:.18rem;color:var(--ink);font:600 1.05rem/1.25 var(--serif);white-space:normal}
+  .about-closing{margin-top:2rem}
+}
+
+@media(max-width:380px){
+  .about .about-grid{width:calc(100% - 28px)}
+  .about .values article,
+  .about .values article:first-child{grid-template-columns:64px minmax(0,1fr);gap:.8rem}
+  .about .values img{width:60px;height:68px}
+}
+
+/* Compact phones, including the 360 x 640 Galaxy S6 viewport. */
+@media(max-width:380px) and (max-height:700px){
+  .site-head{height:72px;width:calc(100% - 28px);padding-inline:0}
+  .site-head .brand{font-size:1.9rem}
+  .site-head .brand>img{width:3rem;height:3.2rem}
+  .menu summary{min-width:44px;min-height:44px}
+
+  .page-home .hero{min-height:calc(100svh - 72px)}
+  .hero{width:calc(100% - 28px);padding:.8rem 0 0;overflow:clip}
+  .hero h1{font-size:2rem;line-height:1.01;margin:.25em 0 .55em}
+  .hero-copy>p:not(.eyebrow){max-width:20rem;font-size:.94rem;line-height:1.55}
+  .actions{margin-top:1.25rem}
+  .button{min-height:46px;padding:.72rem 1.15rem}
+  .hero-art{height:300px}
+  .hero-art img{object-position:center 55%}
+  .hero .section-cue{bottom:.65rem}
+
+  .approach{padding-top:3.5rem}
+  .approach h2,.selected h2{font-size:1.78rem}
+  .approach .lede{margin-bottom:1.7rem;font-size:.94rem;line-height:1.58}
+  .approach .steps article,
+  .approach .steps article:nth-child(2),
+  .approach .steps article:nth-child(n+3){min-height:198px;padding:.85rem .75rem .9rem}
+  .approach .steps article img{height:58px}
+  .approach .steps h3{font-size:.94rem}
+  .approach .steps p{font-size:.82rem;line-height:1.43}
+
+  .selected{padding-top:3.5rem}
+  .project-slider .project-card{flex-basis:76vw}
+  .project-slider .card-media{height:270px}
+  .project-slider .card-copy{padding:1.2rem 1.05rem 1.4rem}
+  .project-slider .card-copy>p:first-child{font-size:.82rem}
+  .project-slider .story,.selected>.more{display:inline-flex;align-items:center;min-height:44px}
+
+  .about{overflow:clip;padding-top:3.7rem}
+  .about h2{font-size:2rem}
+  .about .about-grid>div>p{font-size:.94rem;line-height:1.6}
+  .about .values article,
+  .about .values article:first-child{min-height:96px;padding:.8rem 0}
+  .about .values p{font-size:.88rem}
+  .about .values b{font-size:1rem}
+  .about .note{max-width:100%;font-size:1.05rem}
+
+  footer{padding:2.4rem 18px 1.8rem}
+  footer>div:first-child .brand{font-size:2rem}
+  footer a{display:flex;align-items:center;min-height:44px;font-size:.85rem}
+  .section-cue{width:44px;height:44px}
+}
+
+/* Project cards use compact brand symbols rather than full wordmarks. */
+.project-card .logo-ghost,
+.project-card.night .logo-ghost,
+.project-card.alpine .logo-ghost,
+.project-card.greenhouse .logo-ghost{left:50%;top:29%;width:min(36%,360px);aspect-ratio:1;mix-blend-mode:normal}
+.project-card .logo-ghost img{width:100%;height:100%;object-fit:contain;opacity:.97;filter:contrast(1.08) saturate(1.08) drop-shadow(0 0 8px #fff) drop-shadow(0 0 24px #fff9)}
+.project-card .logo-ghost:before{inset:-52%;background:radial-gradient(circle,#fffef5f2 0,#fffbd5a8 25%,#fff9cf40 48%,transparent 72%);filter:blur(15px)}
+.project-card.night .logo-ghost:before{background:radial-gradient(circle,#f4fffff5 0,#cdf7ffc2 26%,#bceeff4d 50%,transparent 72%)}
+.project-card.alpine .logo-ghost img{border-radius:18%;box-shadow:0 0 30px #ede9ffcc}
+.project-card.alpine .logo-ghost:before{background:radial-gradient(circle,#f7f5fff5 0,#e2ddffc4 28%,#cdc7ff52 52%,transparent 74%)}
+
+@media(max-width:760px){
+  .project-slider .logo-ghost,
+  .project-slider .night .logo-ghost,
+  .project-slider .alpine .logo-ghost,
+  .project-slider .greenhouse .logo-ghost{left:50%;top:29%;width:58%}
+}
+
+/* Let the final botanical image meet the footer without a blank buffer. */
+.page-home .about{padding-bottom:0}
+.page-home .about .section-cue{bottom:1rem}
+
+/* Keep the main chapters within one short-phone viewport. */
+@media(max-width:430px) and (max-height:700px){
+  .approach{min-height:100svh;padding:2.6rem 0 3.5rem}
+  .approach .kicker{margin-bottom:.55rem}
+  .approach h2{margin-bottom:.75rem;font-size:1.65rem}
+  .approach .lede{margin-bottom:1.1rem;font-size:.88rem;line-height:1.48}
+  .approach .steps{display:flex;gap:.7rem;overflow-x:auto;margin-inline:-14px;padding:.15rem 14px .75rem;scroll-padding-inline:14px;scroll-snap-type:x mandatory;overscroll-behavior-x:contain}
+  .approach .steps article,
+  .approach .steps article:nth-child(2),
+  .approach .steps article:nth-child(n+3){flex:0 0 62vw;min-height:190px;padding:.8rem .85rem;border-radius:16px 16px 28px 16px;scroll-snap-align:start;scroll-snap-stop:always}
+  .approach .steps article:nth-child(even){border-radius:16px 16px 16px 28px}
+  .approach .steps article img{height:52px;margin-bottom:.25rem}
+  .approach .steps h3{margin:.15rem 0 .3rem;font-size:.92rem}
+  .approach .steps p{font-size:.8rem;line-height:1.4}
+
+  .selected{min-height:100svh;padding:2.6rem 0 3.5rem}
+  .selected-heading{margin-bottom:.35rem}
+  .selected .kicker{margin-bottom:.55rem}
+  .selected h2{margin-bottom:.6rem;font-size:1.65rem}
+  .project-slider{padding-top:.35rem;padding-bottom:.6rem}
+  .project-slider .project-card{flex-basis:76vw}
+  .project-slider .card-media{height:155px}
+  .project-slider .logo-ghost,
+  .project-slider .night .logo-ghost,
+  .project-slider .alpine .logo-ghost,
+  .project-slider .greenhouse .logo-ghost{width:64%;top:50%}
+  .project-slider .card-copy{padding:.85rem .95rem 1rem}
+  .project-slider .card-copy>p:first-child{margin-bottom:.2rem}
+  .project-slider .card-copy h3{margin-bottom:.35rem;font-size:1.45rem}
+  .project-slider .card-copy>p:not(:first-child){display:-webkit-box;margin-bottom:.55rem;overflow:hidden;font-size:.8rem;line-height:1.4;-webkit-box-orient:vertical;-webkit-line-clamp:3}
+  .project-slider .card-copy ul{display:none}
+  .project-slider .story{margin-top:.2rem;font-size:.82rem}
+  .selected>.more{margin-top:.25rem;min-height:40px;font-size:.85rem}
+}
+
+/* Mobile card groups share one clear, swipeable rhythm. */
+@media(max-width:760px){
+  .approach .steps{
+    display:flex;
+    gap:.8rem;
+    overflow-x:auto;
+    margin-inline:-12px;
+    padding:.2rem 12px 1rem;
+    scroll-padding-inline:12px;
+    scroll-snap-type:x mandatory;
+    overscroll-behavior-inline:contain;
+    scrollbar-width:none;
+  }
+  .approach .steps::-webkit-scrollbar,
+  .about .values::-webkit-scrollbar{display:none}
+  .approach .steps article,
+  .approach .steps article:nth-child(2),
+  .approach .steps article:nth-child(n+3){
+    flex:0 0 min(72vw,310px);
+    min-height:210px;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+  }
+
+  .about .values{
+    display:flex;
+    gap:.8rem;
+    overflow-x:auto;
+    margin:1.75rem -18px 0;
+    padding:.2rem 18px 1rem;
+    border:0;
+    scroll-padding-inline:18px;
+    scroll-snap-type:x mandatory;
+    overscroll-behavior-inline:contain;
+    scrollbar-width:none;
+  }
+  .about .values article,
+  .about .values article:first-child{
+    display:grid;
+    flex:0 0 min(76vw,330px);
+    grid-template-columns:70px minmax(0,1fr);
+    gap:.9rem;
+    min-height:148px;
+    padding:1rem;
+    border:1px solid #53684f2b;
+    border-radius:18px 18px 32px 18px;
+    background:linear-gradient(145deg,#fffdf9e8,#eee7d9d4);
+    box-shadow:0 10px 24px #32402f0d;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+  }
+  .about .values article:nth-child(even){
+    border-radius:18px 18px 18px 32px;
+    background:linear-gradient(215deg,#fffdf9e8,#eee7d9d4);
+  }
+}
+
+@media(max-width:430px) and (max-height:700px){
+  .approach .steps article,
+  .approach .steps article:nth-child(2),
+  .approach .steps article:nth-child(n+3){flex-basis:68vw;min-height:190px}
+  .about .values{margin-top:1.1rem}
+  .about .values article,
+  .about .values article:first-child{flex-basis:76vw;min-height:136px;padding:.85rem}
+}
+
+/* Mobile cards use their illustrations as part of the composition, not a separate row. */
+@media(max-width:760px){
+  .approach .steps article,
+  .approach .steps article:nth-child(2),
+  .approach .steps article:nth-child(n+3){
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    min-height:218px;
+    padding:5.7rem 1.05rem 1.15rem;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  .approach .steps article img{
+    position:absolute;
+    z-index:-1;
+    top:.35rem;
+    right:.65rem;
+    width:8.4rem;
+    height:8.4rem;
+    margin:0;
+    object-fit:contain;
+    object-position:center;
+    opacity:.78;
+    filter:contrast(1.22) saturate(1.04) brightness(.96);
+    transform:rotate(2deg);
+  }
+  .approach .steps article:nth-child(even) img{transform:rotate(-3deg)}
+  .approach .steps h3{position:relative;z-index:1;margin:.1rem 0 .35rem;font-size:1.08rem}
+  .approach .steps p{position:relative;z-index:1;margin:0;font-size:.91rem;line-height:1.48}
+
+  .about .values article,
+  .about .values article:first-child{
+    position:relative;
+    display:flex;
+    justify-content:flex-end;
+    min-height:154px;
+    padding:1.15rem 1rem 1.15rem 8.2rem;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  .about .values img{
+    position:absolute;
+    z-index:-1;
+    left:.35rem;
+    top:50%;
+    width:7.6rem;
+    height:7.6rem;
+    margin:0;
+    object-fit:contain;
+    opacity:.78;
+    filter:contrast(1.2) saturate(1.03) brightness(.96);
+    transform:translateY(-50%) rotate(-3deg);
+  }
+  .about .values article:nth-child(even) img{transform:translateY(-50%) rotate(3deg)}
+  .about .values p{position:relative;z-index:1;font-size:.92rem;line-height:1.46}
+  .about .values b{font-size:1.12rem}
+
+  .project-slider .card-copy>p:not(:first-child){
+    display:-webkit-box;
+    overflow:hidden;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+  }
+}
+
+/* Brand marks keep a clean halo and breathing room inside each project scene. */
+.project-card .logo-ghost img{
+  opacity:.9;
+  filter:contrast(1.04) saturate(.82) brightness(1.06) drop-shadow(0 0 10px #fff) drop-shadow(0 0 26px #fff9);
+}
+.project-card .logo-ghost:before{inset:-42%}
+.project-card.night .logo-ghost img{filter:contrast(1.02) saturate(.78) brightness(1.12) drop-shadow(0 0 12px #eaffff) drop-shadow(0 0 28px #c9f5ffb8)}
+.project-card.alpine .logo-ghost img{filter:contrast(.96) saturate(.72) brightness(1.08) drop-shadow(0 0 12px #f5f2ff) drop-shadow(0 0 28px #d9d2ffb0)}
+.project-card.greenhouse .logo-ghost img{filter:contrast(1.02) saturate(.78) brightness(1.08) drop-shadow(0 0 12px #fffce8) drop-shadow(0 0 28px #fff2b99c)}
+
+@media(max-width:430px) and (max-height:700px){
+  .approach .steps article,
+  .approach .steps article:nth-child(2),
+  .approach .steps article:nth-child(n+3){min-height:190px;padding:4.85rem .9rem .9rem}
+  .approach .steps article img{top:.25rem;right:.45rem;width:7rem;height:7rem}
+  .approach .steps h3{font-size:1rem}
+  .approach .steps p{font-size:.84rem;line-height:1.42}
+  .about .values article,
+  .about .values article:first-child{min-height:138px;padding:.9rem .85rem .9rem 7.3rem}
+  .about .values img{left:.2rem;width:6.6rem;height:6.6rem}
+  .about .values p{font-size:.86rem}
+  .about .values b{font-size:1.02rem}
+  .project-slider .logo-ghost,
+  .project-slider .night .logo-ghost,
+  .project-slider .alpine .logo-ghost,
+  .project-slider .greenhouse .logo-ghost{width:125px;height:125px;max-width:calc(100% - 36px);max-height:calc(100% - 30px)}
+}
+
+.about h2 span{display:block}
+
+/* Frosted project identities sit inside the scene with a clear inner margin. */
+.project-card .logo-ghost{
+  display:grid;
+  place-items:center;
+  padding:clamp(.55rem,1.5vw,1rem);
+  border:1px solid #fff9;
+  border-radius:28%;
+  background:linear-gradient(145deg,#ffffff70,#ffffff24);
+  box-shadow:inset 0 1px 0 #fff9,0 10px 35px #26342b24,0 0 38px #fff8;
+  -webkit-backdrop-filter:blur(7px) saturate(.78);
+  backdrop-filter:blur(7px) saturate(.78);
+}
+.project-card .logo-ghost img,
+.project-card.night .logo-ghost img,
+.project-card.alpine .logo-ghost img,
+.project-card.greenhouse .logo-ghost img{opacity:.76;filter:contrast(.94) saturate(.68) brightness(1.12) drop-shadow(0 1px 8px #fff9)}
+.project-card .logo-ghost:before{opacity:.55}
+
+@media(max-width:760px){
+  .project-slider .card-media{height:160px}
+  .project-slider .logo-ghost,
+  .project-slider .night .logo-ghost,
+  .project-slider .alpine .logo-ghost,
+  .project-slider .greenhouse .logo-ghost{left:50%;top:50%;width:112px;height:112px;max-width:calc(100% - 40px);max-height:calc(100% - 28px)}
+
+  .about .values article,
+  .about .values article:first-child{display:flex;padding:1.15rem;isolation:isolate}
+  .about .values article:after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,#fbf7efef 8%,#fbf7efc7 52%,#fbf7ef82)}
+  .about .values img{
+    left:50%;
+    width:11rem;
+    height:11rem;
+    opacity:.32;
+    filter:contrast(1.18) saturate(.9) brightness(.92);
+    transform:translate(-50%,-50%) rotate(-4deg);
+  }
+  .about .values article:nth-child(even) img{transform:translate(-50%,-50%) rotate(4deg)}
+  .about .values p{max-width:15rem;text-shadow:0 1px 0 #fff,0 0 12px #fff}
+  .about .note{margin-inline:auto;font-size:1.35rem;line-height:1.55;color:#68577f;text-shadow:0 1px 0 #fff,0 0 12px #fff}
+
+  footer{font-size:1rem;line-height:1.6}
+  footer>div:first-child p{font-size:.96rem}
+  footer small{font-size:.75rem}
+  footer a{font-size:1rem}
+  footer>div:first-child .brand>img{width:5.4rem;height:5.8rem}
+  footer .portland img{width:min(390px,94vw);opacity:1;filter:none}
+  footer .portland span{font:1.05rem/1.5 var(--hand);color:#fff}
+  footer .portland span b{font-size:1.2em;font-weight:400}
+}
+
+@media(max-width:430px){
+  .project-slider .card-media{height:145px}
+}
+
+@media(max-width:430px) and (max-height:700px){
+  .project-slider .card-media{height:88px}
+  .project-slider .logo-ghost,
+  .project-slider .night .logo-ghost,
+  .project-slider .alpine .logo-ghost,
+  .project-slider .greenhouse .logo-ghost{width:68px;height:68px;max-width:calc(100% - 32px);max-height:calc(100% - 20px);padding:.38rem}
+}
+
+/* 320px is the narrowest supported layout. Keep the key heading intentional. */
+@media(max-width:340px){
+  .about .about-grid{width:calc(100% - 24px)}
+  .about h2{font-size:1.72rem;letter-spacing:-.035em}
+  .about h2 span{white-space:nowrap}
+  .about .about-grid>div>p{font-size:.9rem;line-height:1.55}
+  .about .values{margin-inline:-12px;padding-inline:12px;scroll-padding-inline:12px}
+  .about .values article,
+  .about .values article:first-child{flex-basis:82vw}
+  footer{padding-inline:18px}
+  footer>div:first-child .brand{font-size:2.2rem}
+  footer>div:first-child .brand>img{width:5rem;height:5.3rem}
+  footer .portland span{font-size:.94rem;white-space:nowrap}
+}
+
+/* Optical centering accounts for the uneven visual weight of these two marks. */
+.project-card.night .logo-ghost img{transform:translateY(7%) scale(.94)}
+.project-card.greenhouse .logo-ghost img{transform:translateY(9%) scale(.92)}
+
+@media(max-width:760px){
+  .site-head{
+    position:relative;
+    top:auto;
+    z-index:20;
+    width:calc(100% - 28px);
+    margin-inline:auto;
+    padding-inline:0;
+    background:transparent;
+    box-shadow:none;
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
+  .site-head .menu summary{width:44px;height:44px}
+  .page-bibleproject .site-head,
+  .page-eso-market-tracker .site-head,
+  .page-healthmedocs .site-head{background:transparent;box-shadow:none}
+
+  .selected{max-width:100%;overflow-x:clip}
+  .project-slider{max-width:100%;contain:inline-size}
+  .project-slider .card-copy ul,
+  .work-list .card-copy ul{
+    display:flex;
+    flex-wrap:nowrap;
+    gap:.35rem;
+    max-width:100%;
+    margin:.55rem 0;
+    overflow:hidden;
+    white-space:nowrap;
+  }
+  .project-slider .card-copy li,
+  .work-list .card-copy li{flex:0 0 auto}
+  .project-card .story{display:inline-flex;align-items:center;white-space:nowrap}
+  .project-card .story span{flex:0 0 auto}
+}
+
+@media(max-width:430px) and (max-height:700px){
+  .project-slider .card-copy ul{display:flex;margin:.35rem 0}
+}
+
+/* About artwork is a clipped background layer anchored to the section floor. */
+.page-home .about{position:relative;overflow:hidden;isolation:isolate;margin-bottom:0}
+.page-home .approach,
+.page-home .selected,
+.page-home .about{display:flex;flex-direction:column;justify-content:center}
+.page-home .about .about-grid{position:relative;z-index:2}
+.page-home .about-closing{position:static;z-index:2;margin:1.5rem 0 clamp(8.5rem,19vw,13rem)}
+.page-home .about .note{position:relative;left:auto;right:auto;bottom:auto;margin:0 auto}
+.page-home .about-art{position:absolute;z-index:0;left:0;right:0;bottom:-1px;width:100%;max-width:100%;margin:0;overflow:hidden;pointer-events:none}
+.page-home .about-art img{flex:0 0 auto;max-width:none}
+.page-home #site-footer{margin-top:0}
+
+@media(max-width:760px){
+  .page-home .about-art .about-garden-left{width:70vw}
+  .page-home .about-art .about-garden-right{width:35vw;margin-left:-10vw}
+  .page-home .about-closing{margin-top:1rem;margin-bottom:9rem}
+}
+
+@media(max-width:430px){
+  .page-home .about-art .about-garden-left{width:74vw}
+  .page-home .about-art .about-garden-right{width:38vw;margin-left:-12vw}
+  .page-home .about-closing{margin-bottom:8rem}
+}
+
+/* The homepage header belongs to the hero chapter and stays at its top edge. */
+.page-home .hero{min-height:100svh;padding-top:0;grid-template-rows:92px minmax(0,1fr)}
+.page-home .hero>.site-head{position:relative;top:auto;left:auto;grid-column:1/-1;align-self:start;width:100%;margin:0}
+
+/* Compact, continuous project-link underlines. */
+.selected>.more{align-self:center;width:max-content;max-width:calc(100% - 32px);white-space:nowrap}
+.project-card .story{width:max-content;max-width:100%;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:.18rem}
+.project-card .story span{margin-left:.6rem}
+
+@media(max-width:760px){
+  .page-home .hero{padding-top:0}
+  .page-home .hero>.site-head{width:100%;margin-bottom:.8rem}
+}
+
+/* Tiny, state-aware cues beneath swipeable horizontal rails. */
+.rail-controls{display:flex;justify-content:center;align-items:center;gap:.65rem;margin:.2rem auto .55rem}
+.rail-controls button{display:grid;width:1.6rem;height:1.6rem;padding:0;place-items:center;border:0;background:transparent;color:var(--moss-dark);font:400 .9rem/1 var(--sans);cursor:pointer;transition:opacity .2s,transform .2s}
+.rail-controls button:not(:disabled):hover{transform:translateY(-1px)}
+.rail-controls button:disabled{opacity:.2;cursor:default}
+.rail-controls button:focus-visible{outline:1px solid var(--moss);outline-offset:3px;border-radius:999px}
+.selected .rail-controls{margin-top:-1.25rem}
+.about .rail-controls{position:relative;z-index:3}
+
+@media(max-width:760px){
+  .rail-controls{margin-top:-.35rem}
+  .selected .rail-controls{margin-top:-.35rem}
+}

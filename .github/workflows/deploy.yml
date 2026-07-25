@@ -1,7 +1,6 @@
 name: Build and deploy portfolios
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
 permissions:
   contents: read
   id-token: write
